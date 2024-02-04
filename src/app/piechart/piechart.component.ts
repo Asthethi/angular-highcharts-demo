@@ -19,10 +19,15 @@ export class PiechartComponent {
     this.highchart = Highcharts;
     this.chartOptions = {
       chart: {
-        type: 'pie'
+        type: 'pie',
+        backgroundColor: '#000000'
     },
     title: {
-        text: 'Egg Yolk Composition'
+        text: 'Egg Yolk Composition',
+        style: {
+            color: '#f7f7f7',
+            font: 'bold 16px "Trebuchet MS", Verdana, sans-serif'
+         }
     },
     tooltip: {
         valueSuffix: '%'

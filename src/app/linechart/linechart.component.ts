@@ -12,15 +12,20 @@ export class LinechartComponent {
   chartOptions: any;
 
   ngOnInit(): void{
-    this.createPieChart();
+    this.createLineChart();
   }
 
-  createPieChart(){
+  createLineChart(){
     this.highchart = Highcharts;
     this.chartOptions = {
       title: {
         text: 'U.S Solar Employment Growth',
-        align: 'left'
+        align: 'left',
+        style: {
+            color: '#f7f7f7',
+            font: 'bold 16px "Trebuchet MS", Verdana, sans-serif'
+         }
+        
     },
 
     subtitle: {
@@ -30,7 +35,10 @@ export class LinechartComponent {
 
     yAxis: {
         title: {
-            text: 'Number of Employees'
+            text: 'Number of Employees',
+            style: {
+                color: '#efefef'
+              }
         }
     },
 
@@ -38,12 +46,18 @@ export class LinechartComponent {
         accessibility: {
             rangeDescription: 'Range: 2010 to 2020'
         }
+        
     },
 
     legend: {
+        itemStyle: {
+            color: '#efefef'
+          },
+          
         layout: 'vertical',
         align: 'right',
-        verticalAlign: 'middle'
+        verticalAlign: 'middle',
+        
     },
 
     plotOptions: {
@@ -90,6 +104,10 @@ export class LinechartComponent {
                 }
             }
         }]
+    },
+    chart:{
+        backgroundColor :  '#000000'
+        
     }
     };
 
